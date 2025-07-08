@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const NewTask = ({ data }) => {
-  // Helper to create a unique key for a task
+  
   const getTaskKey = (task) => `${task.title}|${task.date}|${task.category}`;
 
-  // Load status from localStorage if exists
+ 
   const [status, setStatus] = useState('new');
 
   useEffect(() => {
@@ -14,17 +14,17 @@ const NewTask = ({ data }) => {
     if (found && found.status) {
       setStatus(found.status);
     }
-    // Log current tasks and active count on mount
+    
     console.log('Loaded tasks from localStorage:', tasks);
     console.log('Loaded activeTaskCount from localStorage:', localStorage.getItem('activeTaskCount'));
   }, [data]);
 
-  // Helper to update task and active count in localStorage
+  
   const updateTaskStatus = (newStatus) => {
     let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
     const key = getTaskKey(data);
     const idx = tasks.findIndex((t) => getTaskKey(t) === key);
-    // Set flags based on status
+ 
     let statusFlags = {
       active: false,
       completed: false,
