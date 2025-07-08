@@ -385,9 +385,9 @@
 
 const admin=[{
   "id": 101,
-  "name": "Atharva Pawar",
-  "email": "atharvap7804@gmail.com",
-  "password": "123456"
+  "name": "admin",
+  "email": "admin@me.com",
+  "password": "123"
 }]
 
 export const setLocalStorage = () => {
